@@ -1,0 +1,68 @@
+﻿<Window x:Class="Biometria_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Biometria_1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="ImageResult" Grid.Row="0"/>
+        <Label Name="ResultMessage" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Grid ShowGridLines="True" Grid.Row="2" VerticalAlignment="Center" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <CheckBox x:Name="RedCheckBox" Content="Red" Grid.Column="0" HorizontalAlignment="Center" Click="UpdateImage"/>
+            <CheckBox x:Name="GreenCheckBox" Content="Green" Grid.Column="1" HorizontalAlignment="Center" Click="UpdateImage"/>
+            <CheckBox x:Name="BlueCheckBox" Content="Blue" Grid.Column="2" HorizontalAlignment="Center" Click="UpdateImage"/>
+            <CheckBox x:Name="AverageCheckBox" Content="Average" Grid.Column="3" HorizontalAlignment="Center" Click="UpdateImage"/>
+            <Slider x:Name="Threshold" Grid.Column="4" HorizontalAlignment="Center" Width="120" ValueChanged="UpdateImage"/>
+            <CheckBox x:Name="HistogramCheckBox" Content="Histogram" Grid.Column="5" HorizontalAlignment="Center" Click="CheckHistogram"/>
+            <Button Content="Save" Grid.Column="6" Click="SaveImage"/>
+        </Grid>
+        <Grid Grid.Row="4" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <CheckBox x:Name="NiblackCheckBox" Content="Niblack" Grid.Column="0" HorizontalAlignment="Center" Click="UpdateImage"/>
+            <CheckBox x:Name="BernsenCheckBox" Content="Bernsen" Grid.Column="1" HorizontalAlignment="Center" Click="UpdateImage"/>
+            <CheckBox x:Name="SauronCheckBox" Content="Sauvola" Grid.Column="2" HorizontalAlignment="Center" Click="UpdateImage"/>
+            <CheckBox x:Name="SkyWalkerCheckBox" Content="Phansalkar" Grid.Column="3" HorizontalAlignment="Center" Click="UpdateImage"/>
+
+        </Grid>
+        <Grid Grid.Row="3" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <CheckBox x:Name="StretchingCheckBox" Content="Stretching" Grid.Column="0" HorizontalAlignment="Center" Click="UpdateImage"/>
+            <CheckBox x:Name="EqCheckBox" Content="Equalization" Grid.Column="3" HorizontalAlignment="Center" Click="UpdateImage"/>
+            <CheckBox x:Name="OtsuCheckBox" Content="Otsu" Grid.Column="4" HorizontalAlignment="Center" Click="UpdateImage"/>
+            <Slider x:Name="StretchingMin" Value="0" Grid.Column="1" HorizontalAlignment="Center" Width="120" ValueChanged="UpdateImage"/>
+            <Slider x:Name="StretchingMax" Value="255" Grid.Column="2" HorizontalAlignment="Center" Width="120" ValueChanged="UpdateImage"/>
+
+        </Grid>
+    </Grid>
+</Window>
